@@ -1,7 +1,8 @@
 <?php
 $pageName = "Wire Transfer";
 include_once("layouts/header.php");
-require_once("userPinfunction.php");
+//require_once("userPinfunction.php");
+require_once ('wirePinfunction.php');
 
 
 ?>
