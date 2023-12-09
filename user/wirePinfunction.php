@@ -147,14 +147,14 @@ if(isset($_POST['wire_transfer'])){
                     if(true){
                         session_start();
                         $_SESSION['wire-transfer'] = $code;
-                        header("Location:./pin.php");
+                        header("Location:./wire_pin.php");
                     }
 
 
                 }else{
                     session_start();
                     $_SESSION['wire-transfer']=$user_id;
-                    header("Location:./pin.php");
+                    header("Location:./wire_pin.php");
                 }
             }    }
     }
