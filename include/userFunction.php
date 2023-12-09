@@ -213,25 +213,30 @@ function wireStatus($result){
 }
 
 //USERS DETAILS WITH ACCOUNT NUM
-$getUrlAddrs = $_SERVER['REQUEST_URI'];
-if (!$getUrlAddrs == "/pin.php/" || !$getUrlAddrs == "/login/" || !$getUrlAddrs == "/login.php/" || !$getUrlAddrs == "/signup/verify-registration.php/"){
-    null;
-}else {
     function userDetails($value)
     {
         $conn = dbConnect();
-        $acct_no = $_SESSION['acct_no'];
+        $getUrlAddrs = $_SERVER['REQUEST_URI'];
+        if (!$getUrlAddrs == "/pin.php/" || !$getUrlAddrs == "/login/" || !$getUrlAddrs == "/login.php/" || !$getUrlAddrs == "/signup/verify-registration.php/"){
+            null;
+        }else {
+            $acct_no = $_SESSION['acct_no'];
+        }
         $sql = "SELECT * FROM users WHERE acct_no = :acct_no";
         $stmt = $conn->prepare($sql);
         $stmt->execute([
             'acct_no' => $acct_no
         ]);
 
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $row[$value];
+        $getUrlAddrs = $_SERVER['REQUEST_URI'];
+        if (!$getUrlAddrs == "/pin.php/" || !$getUrlAddrs == "/login/" || !$getUrlAddrs == "/login.php/" || !$getUrlAddrs == "/signup/verify-registration.php/"){
+            null;
+        }else {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $row[$value];
+        }
 
     }
-}
 //Crypto Name
 function cryptoName($value){
     $conn = dbConnect();
