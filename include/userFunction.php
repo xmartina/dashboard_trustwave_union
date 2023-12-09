@@ -217,6 +217,9 @@ function userDetails($value){
     $conn = dbConnect();
     if (isset($_SESSION['acct_no'])) {
         $acct_no = $_SESSION['acct_no'];
+    }else {
+        // Handle the case when the index is not defined
+        $acctNo = null; // or whatever default value or action you want
     }
     $sql ="SELECT * FROM users WHERE acct_no = :acct_no";
     $stmt = $conn->prepare($sql);
@@ -227,6 +230,9 @@ function userDetails($value){
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if (is_array($row[$value])) {
         return $row[$value];
+    } else {
+        // Handle the case when the variable is not an array
+        return null; // or whatever default value or action you want
     }
 }
 //Crypto Name
