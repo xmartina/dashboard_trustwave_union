@@ -145,15 +145,15 @@ if(isset($_POST['wire_transfer'])){
                     $email_message->send_mail($email, $message, $subject);
 
                     if(true){
-                        session_start();
-                        $_SESSION['wire-transfer'] = $code;
+//                        session_start();
+//                        $_SESSION['wire-transfer'] = $code;
                         header("Location:./wire_pin.php");
                     }
 
 
                 }else{
-                    session_start();
-                    $_SESSION['wire-transfer']=$user_id;
+//                    session_start();
+//                    $_SESSION['wire-transfer']=$user_id;
                     header("Location:./wire_pin.php");
                 }
             }    }

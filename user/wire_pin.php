@@ -1,7 +1,10 @@
 <?php
 $pageName = "Pin";
 require_once("layouts/header.php");
-include("./userPinfunction.php");
+//include("./userPinfunction.php");
+include("./wirePinfunction.php");
+session_start();
+$_SESSION['wire-transfer'];
 ?>
 
 <div id="content" class="main-content">
@@ -10,9 +13,9 @@ include("./userPinfunction.php");
             <div class="col-md-8 offset-md-2 mt-5">
                 <div class="card component-card">
                     <div class="card-body">
-                        <?php
-                        if($_SESSION['wire-transfer']){
-                            ?>
+<!--                        --><?php
+//                        if($_SESSION['wire-transfer']){
+//                            ?>
                             <div class="user-profile">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -65,7 +68,7 @@ include("./userPinfunction.php");
                                     </div>
                                 </form>
                             </div>
-                        <?php } ?>
+<!--                        --><?php //} ?>
                     </div>
 
                 </div>
